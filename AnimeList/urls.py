@@ -20,4 +20,5 @@ from AnimeList import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('animeList/', views.anime_list),
+    path('animeList/<int:id>/', views.anime_detail),
 ]
