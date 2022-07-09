@@ -15,11 +15,11 @@ class Anime(models.Model):
     name = models.CharField(max_length=250)
     japanese_name = models.CharField(max_length=250)
     description = models.TextField()
-    score = models.IntegerField(default=10, validators=[
-                                MinValueValidator(1), MaxValueValidator(10)])
-    start_date = models.DateField()
+    score = models.IntegerField(default=0, validators=[
+                                MinValueValidator(0), MaxValueValidator(10)])
+    start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
-    episodes = models.IntegerField(null=True, blank=True)
+    episodes = models.IntegerField(blank=True, null=True)
     status = models.CharField(
         max_length=15, choices=STATUS_CHOICES, default='plan_to_watch')
 
